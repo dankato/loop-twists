@@ -34,6 +34,9 @@ function min(numbers) {
 
 // console.log(min([4,5,16,1]));
 
+
+// Redo "Compute the average" exercise but this use a while loop instead of a for loop
+
 function average(numbers) {
   let i = 1;
   let result = numbers[0];
@@ -47,9 +50,27 @@ function average(numbers) {
 
 // console.log(average([1,2,3]));
 
-// Higher-order function drills
+// Redo the "Fizz Buzz" drill" if you used if/else last time, then try switch statement this time.
 
-// Functions as arguments (1)
+function fizzBuzz(countTo) {
+    let arr = [];
+    for (let i = 1; i <= countTo; i++) {
+        switch(true) {
+            case (i % 15 === 0) : arr.push('fizzbuzz');
+            break;
+            case (i % 5 === 0) : arr.push('buzz');
+            break;
+            case (i % 3 === 0) : arr.push('fizz');
+            break;
+            default: arr.push(i);
+        }
+    }
+    return arr;
+}
+
+fizzBuzz(20);
+
+// Higher-order function drills -- Functions as arguments (1)
 
 function repeat(fn, n) {
   for (let i=0; i<n; i++) {
