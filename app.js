@@ -93,24 +93,51 @@ repeat(goodbye, 5);
 // Functions as arguments (2)
 
 // Return only names that begin with 'R'
-const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-
-const filteredNames = filter(myNames, function(name) {
-    return name[0] === 'R';
-});
-
-console.log(filteredNames) // => ['Rich', 'Ray']
+// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+//
+// const filteredNames = filter(myNames, function(name) {
+//     return name[0] === 'R';
+// });
+//
+// console.log(filteredNames) // => ['Rich', 'Ray']
 
 // TASK -- DEFINE YOUR FILTER FUNCTION BELOW:
-function filter(arr, fn) {
-    let newArray = [];
-    for(let i = 0; i < arr.length; i++) {
-        if(fn(arr[i]) === true) {
-            console.log(arr[i]);
-            newArray.push(arr[i]);
-        }
+// function filter(arr, fn) {
+//     let newArray = [];
+//     for(let i = 0; i < arr.length; i++) {
+//         if(fn(arr[i]) === true) {
+//             console.log(arr[i]);
+//             newArray.push(arr[i]);
+//         }
+//     }
+//     return newArray;
+// }
+//
+// filter(myNames);
+
+// Functions as return values
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+
+  return function(location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}`)
+
+    if (warningCounter === 1) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`)
     }
-    return newArray;
+
+    if (warningCounter === 0 || warningCounter >= 2) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`)
+    }
+  }
 }
 
-filter(myNames);
+const rocksWarning = hazardWarningCreator('Rocks on the road');
+const oilWarning = hazardWarningCreator('Oil slick on the road');
+const roadkillWarning = hazardWarningCreator('Roadkill all over the road');
+
+rocksWarning('corner of 5th and 33rd');
+rocksWarning('corner of 5th and 33rd');
+rocksWarning('corner of 5th and 33rd');
