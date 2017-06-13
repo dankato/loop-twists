@@ -5,12 +5,12 @@
 function max(numbers) {
     let currentMax = numbers[0];  // setting currentMax to the value of the 1st item
 
-    var i = 0; 
+    var i = 0;
     while (i < numbers.length) { // while loop
         if(numbers[i]> currentMax) { // if the item is greater than the currentMax
             currentMax = numbers[i]; // sets number as the currentMax
         }
-    i++; 
+    i++;
     }
     return currentMax;
 }
@@ -18,8 +18,18 @@ function max(numbers) {
 // max([0, 1, 2, 3, 4]) // => 4
 
 function min(numbers) {
-    
+  let currentMin = numbers[0];
+
+  let i = 0;
+  while (i < numbers.length) {
+    if (currentMin > numbers[i]) {
+      currentMin = numbers[i];
+    }
+
+    i++;
+  }
+
+  return currentMin;
 }
 
-
-
+console.log(min([4,5,16,1]));
