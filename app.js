@@ -92,28 +92,30 @@ repeat(goodbye, 5);
 
 // Functions as arguments (2)
 
-// Return only names that begin with 'R'
-// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-//
-// const filteredNames = filter(myNames, function(name) {
-//     return name[0] === 'R';
-// });
-//
-// console.log(filteredNames) // => ['Rich', 'Ray']
+Return only names that begin with 'R'
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
-// TASK -- DEFINE YOUR FILTER FUNCTION BELOW:
-// function filter(arr, fn) {
-//     let newArray = [];
-//     for(let i = 0; i < arr.length; i++) {
-//         if(fn(arr[i]) === true) {
-//             console.log(arr[i]);
-//             newArray.push(arr[i]);
-//         }
-//     }
-//     return newArray;
-// }
-//
-// filter(myNames);
+const filteredNames = filter(myNames, function(name) {
+    return name[0] === 'R';
+});
+
+console.log(filteredNames) // => ['Rich', 'Ray']
+
+TASK -- DEFINE YOUR FILTER FUNCTION BELOW:
+function filter(arr, fn) {
+    let newArray = [];
+    for(let i = 0; i < arr.length; i++) {
+        if(fn(arr[i]) === true) {
+            console.log(arr[i]);
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray;
+}
+
+filter(myNames);
+
+filter(myNames, (name) => name[0]==='R');
 
 // Functions as return values
 
