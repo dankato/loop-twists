@@ -141,3 +141,23 @@ const roadkillWarning = hazardWarningCreator('Roadkill all over the road');
 rocksWarning('corner of 5th and 33rd');
 rocksWarning('corner of 5th and 33rd');
 rocksWarning('corner of 5th and 33rd');
+
+
+// forEach, filter and map
+
+let turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+let turtleFilter = turtleMoves.filter(function(arg) {
+    return arg[0] >= 0 && arg[1] >= 0;
+});
+
+// console.log(turtleFilter);
+
+function addMoves(arg) {
+    return arg[0] + arg[1];
+}
+
+let totalSteps = turtleFilter.map(addMoves);
+
+totalSteps.forEach(function(barn) {
+    console.log(barn); // 5
+});
