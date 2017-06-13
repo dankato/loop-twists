@@ -42,7 +42,6 @@ function average(numbers) {
   let result = numbers[0];
   while (i < numbers.length) {
     result = result + numbers[i];
-    i++;
   }
 
   return result / numbers.length;
@@ -50,6 +49,14 @@ function average(numbers) {
 
 // console.log(average([1,2,3]));
 
+// Bonus: Try the Array.forEach() method.
+function average(numbers) {
+    let result = numbers[0];
+        numbers.forEach(function(arg) {
+            result = result + arg;
+    })
+    return result / numbers.length;
+}
 // Redo the "Fizz Buzz" drill" if you used if/else last time, then try switch statement this time.
 
 function fizzBuzz(countTo) {
