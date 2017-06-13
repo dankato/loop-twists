@@ -46,3 +46,24 @@ function average(numbers) {
 }
 
 // console.log(average([1,2,3]));
+
+// Higher-order function drills
+
+// Functions as arguments (1)
+
+function repeat(fn, n) {
+  for (let i=0; i<n; i++) {
+    fn();
+  }
+}
+
+function hello() {
+  console.log("hello world");
+}
+
+function goodbye() {
+  console.log("goodbye world");
+}
+
+repeat(hello, 5);
+repeat(goodbye, 5);
